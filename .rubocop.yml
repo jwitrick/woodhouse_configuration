@@ -1,0 +1,9 @@
+AllCops:
+  Exclude:
+    - 'Berksfile'
+    - 'solo.rb'
+SingleSpaceBeforeFirstArg:
+  Exclude:
+    - "**/metadata.rb"
+Metrics/MethodLength:
+  Max: 50

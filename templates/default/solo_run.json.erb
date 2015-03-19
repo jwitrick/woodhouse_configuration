@@ -1,0 +1,12 @@
+{
+  "woodhouse": {
+    "conf": {
+      "orgs": {
+      <% @orgs.each_pair do |org, repos| -%>
+        "<%=org%>": <%=repos%><% if org != @orgs.keys()[-1] %>,<%end-%>
+      <% end -%>
+      }
+    }
+  },
+  "run_list": [ "recipe[woodhouse_configuration]" ]
+}

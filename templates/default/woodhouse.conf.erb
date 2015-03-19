@@ -1,0 +1,22 @@
+[github]
+api_url = <%=node['woodhouse']['github']['api_url']%>
+login = <%=node['woodhouse']['github']['login']%>
+password = <%=node['woodhouse']['github']['password']%>
+orgs = <% @orgs.each_pair do |org, repo| -%><%=org%><% if org != @orgs.keys()[-1] %>,<%end-%><%end-%>
+
+[repos]
+<% @orgs.each_pair do |org, repos| -%>
+<%=org%> = <% repos.each do |repo|%><%=repo%><%if repo != repos.last %>,<%end%><%end%>
+<% end -%>
+
+[jenkins-jobs]
+<% @orgs.each_pair do |org, repos| -%>
+  <% repos.each do |repo| -%>
+<%=repo%> = <%=repo%>_PR
+  <% end -%>
+<% end -%>
+
+[jenkins]
+user = <%=node['woodhouse']['jenkins']['username']%>
+password = <%=node['woodhouse']['jenkins']['password']%>
+url = <%=node['woodhouse']['jenkins']['url']%>

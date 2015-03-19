@@ -1,0 +1,11 @@
+{
+  "woodhouse": {
+    "conf": {
+      "orgs": {
+        "test": ["test repo"],
+        "test1": ["test1 repo"]
+      }
+    }
+  },
+  "run_list": [ "recipe[woodhouse_configuration]" ]
+}
