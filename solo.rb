@@ -1,2 +1,2 @@
 
-cookbook_path  "/root"
+cookbook_path  "/var/lib/jenkins"
